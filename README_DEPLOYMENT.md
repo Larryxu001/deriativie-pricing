@@ -1,11 +1,11 @@
-# 🚀 快速部署指南
+# 🚀 Quick Deployment Guide
 
-## 一键部署到 Vercel（推荐）
+## One-Click Deployment to Vercel (Recommended)
 
-### 方法一：通过 Vercel 网站（最简单）
+### Method 1: Use the Vercel Website (Simplest)
 
-1. **准备代码仓库**
-   - 将代码推送到 GitHub（如果还没有）
+1. **Prepare the code repository**
+   - Push the code to GitHub if you have not already done so
    ```bash
    git init
    git add .
@@ -14,88 +14,88 @@
    git push -u origin main
    ```
 
-2. **部署到 Vercel**
-   - 访问 [vercel.com](https://vercel.com)
-   - 点击 "Sign Up" 使用 GitHub 账号登录
-   - 点击 "New Project"
-   - 选择你的 GitHub 仓库
-   - Vercel 会自动检测配置，直接点击 "Deploy"
-   - 等待 1-2 分钟，部署完成！
+2. **Deploy to Vercel**
+   - Visit [vercel.com](https://vercel.com)
+   - Click "Sign Up" and sign in with your GitHub account
+   - Click "New Project"
+   - Select your GitHub repository
+   - Vercel detects the configuration automatically; click "Deploy"
+   - Wait for the deployment to finish, typically around 1–2 minutes
 
-3. **获取访问链接**
-   - 部署完成后，你会得到一个类似 `https://your-project.vercel.app` 的链接
-   - 这个链接可以立即访问，并且是 HTTPS 加密的
+3. **Get the website URL**
+   - After deployment, you receive a URL such as `https://your-project.vercel.app`
+   - The site is immediately accessible over HTTPS
 
-### 方法二：通过命令行
+### Method 2: Use the Command Line
 
 ```bash
-# 1. 安装 Vercel CLI
+# 1. Install the Vercel CLI
 npm install -g vercel
 
-# 2. 登录
+# 2. Sign in
 vercel login
 
-# 3. 在项目目录下部署
+# 3. Deploy from the project directory
 cd /Users/xulangliyuemanhua/Documents/Deriative/Deriativie
 vercel
 
-# 4. 生产环境部署
+# 4. Deploy to production
 vercel --prod
 ```
 
-## 📋 部署前检查清单
+## 📋 Pre-Deployment Checklist
 
-- [ ] 代码已推送到 Git 仓库
-- [ ] 所有依赖已安装（`npm install`）
-- [ ] 本地测试通过（`npm run dev`）
-- [ ] 构建成功（`npm run build`）
+- [ ] Code has been pushed to a Git repository
+- [ ] Dependencies are installed (`npm install`)
+- [ ] Local checks pass (`npm run dev`)
+- [ ] The build succeeds (`npm run build`)
 
-## 🔧 环境变量配置（可选）
+## 🔧 Environment Variables (Optional)
 
-如果需要配置环境变量，在 Vercel 项目设置中添加：
+If environment variables are needed, add them in the Vercel project settings:
 
-- `VITE_APP_TITLE` - 应用标题
-- `VITE_API_URL` - API 地址（如果将来需要）
+- `VITE_APP_TITLE` - Application title
+- `VITE_API_URL` - API URL, if required in the future
 
-## 📊 部署后功能
+## 📊 After Deployment
 
-部署成功后，你的平台将具备：
+A successful deployment provides:
 
-✅ **公网访问** - 任何人都可以通过链接访问  
-✅ **HTTPS 加密** - 自动配置 SSL 证书  
-✅ **CDN 加速** - 全球内容分发网络  
-✅ **自动更新** - 每次 Git push 自动重新部署  
-✅ **性能监控** - Vercel 提供性能分析  
+✅ **Public access** - Visitors can access the site through its URL  
+✅ **HTTPS** - Automatically configured SSL certificates  
+✅ **CDN delivery** - Global content distribution  
+✅ **Automatic updates** - Git pushes trigger redeployment when the Git integration is connected  
+✅ **Performance monitoring** - Performance-analysis options are available through Vercel  
 
-## 🎯 下一步优化建议
+## 🎯 Suggested Next Improvements
 
-1. **自定义域名**
-   - 在 Vercel 项目设置中添加你的域名
-   - 例如：`pricing.yourdomain.com`
+1. **Custom domain**
+   - Add your domain in the Vercel project settings
+   - Example: `pricing.yourdomain.com`
 
-2. **添加分析**
-   - 集成 Google Analytics
-   - 监控用户访问情况
+2. **Analytics**
+   - Integrate Google Analytics
+   - Monitor website traffic
 
-3. **性能优化**
-   - 已自动启用代码分割和压缩
-   - 可考虑添加 Service Worker 实现离线访问
+3. **Performance**
+   - Code splitting and minification are enabled automatically
+   - Consider a Service Worker for offline access
 
-## ❓ 常见问题
+## ❓ Frequently Asked Questions
 
-**Q: 部署后页面空白？**  
-A: 检查浏览器控制台错误，可能是路由配置问题。确保 `vercel.json` 中的 rewrites 配置正确。
+**Q: Why is the page blank after deployment?**  
+A: Check the browser console for errors. Routing may be the cause; make sure the rewrites in `vercel.json` are configured correctly.
 
-**Q: 如何更新网站？**  
-A: 只需 `git push` 到 GitHub，Vercel 会自动重新部署。
+**Q: How do I update the website?**  
+A: With the Git integration connected, push to GitHub and Vercel redeploys automatically.
 
-**Q: 可以部署到其他平台吗？**  
-A: 可以！参考 `DEPLOYMENT.md` 了解 Netlify、GitHub Pages 等其他选项。
+**Q: Can I deploy to another platform?**  
+A: Yes. See `DEPLOYMENT.md` for alternatives such as Netlify and GitHub Pages.
 
-## 📞 需要帮助？
+## 📞 Need Help?
 
-如果遇到问题，可以：
-1. 查看 Vercel 部署日志
-2. 检查浏览器控制台错误
-3. 参考 `DEPLOYMENT.md` 详细文档
+If you encounter a problem:
 
+1. Review the Vercel deployment logs
+2. Check the browser console for errors
+3. Refer to the detailed `DEPLOYMENT.md` guide

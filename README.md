@@ -1,158 +1,165 @@
-# 衍生品定价工具
+# Derivatives Pricing Tool
 
-一个功能完整的衍生品定价Web应用，支持多种金融产品的定价计算和风险分析。
+A derivatives-pricing web application supporting pricing calculations and risk analysis for multiple financial products.
 
-## 功能特点
+## Features
 
-- ✅ **多种产品支持**
-  - 香草期权（Vanilla Options）- Black-Scholes模型
-  - 亚式期权（Asian Options）- 蒙特卡洛模拟
-  - FCN（Fixed Coupon Note）- 蒙特卡洛模拟
-  - Accumulator（累计期权）- 蒙特卡洛模拟
-  - Decumulator（累计期权）- 蒙特卡洛模拟
+- ✅ **Multiple product types**
+  - Vanilla Options - Black-Scholes model
+  - Asian Options - Monte Carlo simulation
+  - FCN (Fixed Coupon Note) - Monte Carlo simulation
+  - Accumulator - Monte Carlo simulation
+  - Decumulator - Monte Carlo simulation
 
-- ✅ **完整的Greeks计算**
-  - Delta（价格敏感性）
-  - Gamma（Delta的敏感性）
-  - Theta（时间衰减）
-  - Vega（波动率敏感性）
-  - Rho（利率敏感性）
+- ✅ **Greeks calculations**
+  - Delta (price sensitivity)
+  - Gamma (sensitivity of Delta)
+  - Theta (time decay)
+  - Vega (volatility sensitivity)
+  - Rho (interest-rate sensitivity)
 
-- ✅ **可视化分析**
-  - 价格敏感性分析图表
-  - 实时结果展示
+- ✅ **Visual analysis**
+  - Price-sensitivity charts
+  - Interactive results display
 
-- ✅ **历史记录管理**
-  - 自动保存计算结果
-  - 历史记录查看和对比
-  - 按产品类型筛选
+- ✅ **Calculation history**
+  - Automatically save calculation results
+  - View and compare historical results
+  - Filter by product type
 
-- ✅ **批量计算**
-  - 基于基础参数生成多个参数组合
-  - 批量计算并对比结果
+- ✅ **Batch calculations**
+  - Generate parameter combinations from a base set of inputs
+  - Calculate and compare results in batches
 
-- ✅ **数据导出**
-  - 导出为Excel格式
-  - 导出为CSV格式
+- ✅ **Data export**
+  - Export to Excel
+  - Export to CSV
 
-- ✅ **移动端适配**
-  - 响应式设计
-  - 支持移动设备访问
+- ✅ **Mobile support**
+  - Responsive design
+  - Accessible on mobile devices
 
-## 技术栈
+## Technology Stack
 
-- **前端框架**: React 18 + TypeScript
-- **构建工具**: Vite
-- **样式**: Tailwind CSS
-- **图表**: Recharts
-- **路由**: React Router
-- **数据导出**: xlsx
+- **Frontend**: React 18 + TypeScript
+- **Build tool**: Vite
+- **Styling**: Tailwind CSS
+- **Charts**: Recharts
+- **Routing**: React Router
+- **Data export**: xlsx
 
-## 安装和运行
+## Installation and Development
 
-### 前置要求
+### Prerequisites
 
-- Node.js 16+ 
-- npm 或 yarn
+- Node.js 16+
+- npm or yarn
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 开发模式
+### Development Mode
 
 ```bash
 npm run dev
 ```
 
-应用将在 `http://localhost:5173` 启动
+The application starts at `http://localhost:5173`.
 
-### 构建生产版本
+### Production Build
 
 ```bash
 npm run build
 ```
 
-构建文件将输出到 `dist` 目录
+Build output is written to the `dist` directory.
 
-### 预览生产构建
+### Preview the Production Build
 
 ```bash
 npm run preview
 ```
 
-## 使用说明
+## Usage
 
-### 1. 选择产品类型
+### 1. Choose a Product Type
 
-在首页选择要定价的产品类型（香草期权、亚式期权、FCN等）
+Select a product on the home page, such as a vanilla option, Asian option, or FCN.
 
-### 2. 输入参数
+### 2. Enter Parameters
 
-根据产品类型输入相应的参数：
-- **现货价格 (S)**: 当前标的资产价格
-- **执行价格 (K)**: 期权的执行价格
-- **无风险利率 (r)**: 年化无风险利率（如0.05表示5%）
-- **波动率 (σ)**: 年化波动率（如0.2表示20%）
-- **到期时间 (T)**: 到期时间（以年为单位，如0.25表示3个月）
+Enter the parameters required for the selected product:
 
-### 3. 查看结果
+- **Spot price (S)**: Current price of the underlying asset
+- **Strike price (K)**: Option exercise price
+- **Risk-free rate (r)**: Annual risk-free interest rate; for example, 0.05 means 5%
+- **Volatility (σ)**: Annualized volatility; for example, 0.2 means 20%
+- **Time to maturity (T)**: Time in years; for example, 0.25 means three months
 
-点击"计算价格"后，将显示：
-- 期权/产品的理论价格
-- Greeks（风险指标）
-- 价格敏感性分析图表
+### 3. View Results
 
-### 4. 历史记录
+Click the calculate-price button to display:
 
-所有计算结果会自动保存到历史记录，可以：
-- 查看之前的计算结果
-- 按产品类型筛选
-- 导出为Excel或CSV
+- The theoretical price of the option or product
+- Greeks (risk measures)
+- Price-sensitivity charts
 
-### 5. 批量计算
+### 4. Calculation History
 
-在批量计算页面：
-- 设置基础参数
-- 系统会自动生成多个参数组合（如不同的现货价格）
-- 批量计算并对比结果
+Calculation results are saved automatically. You can:
 
-## 定价模型说明
+- View previous results
+- Filter by product type
+- Export to Excel or CSV
 
-### 香草期权
-使用经典的Black-Scholes模型，提供解析解和完整的Greeks计算。
+### 5. Batch Calculations
 
-### 亚式期权
-使用蒙特卡洛模拟方法，支持算术平均和几何平均两种类型。
+On the batch-calculation page:
+
+- Set the base parameters
+- Generate multiple combinations, such as different spot prices
+- Calculate and compare the results in a batch
+
+## Pricing Models
+
+### Vanilla Options
+
+Uses the classic Black-Scholes model with an analytical solution and Greeks calculations.
+
+### Asian Options
+
+Uses Monte Carlo simulation and supports both arithmetic-average and geometric-average options.
 
 ### FCN
-使用蒙特卡洛模拟，考虑敲出和敲入条款的影响。
 
-### Accumulator/Decumulator
-使用蒙特卡洛模拟，考虑障碍价格和累计收益机制。
+Uses Monte Carlo simulation to account for knock-out and knock-in provisions.
 
-## 注意事项
+### Accumulator / Decumulator
 
-1. **计算精度**: 蒙特卡洛模拟的精度取决于模拟次数，当前设置为50,000次，计算可能需要几秒钟。
+Uses Monte Carlo simulation to account for barrier levels and cumulative payoff mechanics.
 
-2. **参数单位**: 
-   - 利率和波动率使用小数形式（5% = 0.05）
-   - 时间使用年为单位（3个月 = 0.25年）
+## Notes
 
-3. **数据存储**: 历史记录存储在浏览器本地存储（localStorage），清除浏览器数据会丢失历史记录。
+1. **Numerical accuracy**: Monte Carlo accuracy depends on the number of simulations. The documented configuration uses 50,000 simulations, so calculations may take several seconds.
 
-## 未来计划
+2. **Parameter units**:
+   - Enter interest rates and volatility as decimals (5% = 0.05)
+   - Enter time in years (three months = 0.25 years)
 
-- [ ] 支持更多衍生品类型
-- [ ] 添加更多定价模型选项
-- [ ] 改进敏感性分析的准确性
-- [ ] 添加参数校验和错误提示
-- [ ] 支持中英双语界面
-- [ ] 添加用户自定义参数范围
+3. **Data storage**: Calculation history is stored in the browser's localStorage. Clearing browser data removes that history.
 
-## 许可证
+## Roadmap
+
+- [ ] Support additional derivative types
+- [ ] Add more pricing-model options
+- [ ] Improve sensitivity-analysis accuracy
+- [ ] Add parameter validation and error messages
+- [ ] Support English and Chinese interfaces
+- [ ] Add user-defined parameter ranges
+
+## License
 
 MIT License
-
